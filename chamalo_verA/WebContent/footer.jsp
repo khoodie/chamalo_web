@@ -50,7 +50,7 @@
 					
             		<div class="col-md-6 col-sm-6 col-xs-12">
 						<div class="copyright">
-							<p>Made by <a target="_blank" href="https://github.com/khoodie">Kang sungmin </a></p>
+							<p>Made by <a target="_blank" href="https://github.com/khoodie">Kang sungmin with Other guys </a></p>
 						</div>
 					</div>
 					

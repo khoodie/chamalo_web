@@ -23,6 +23,7 @@ body {
 PRE LOADER 
 ==========================================*/
 
+
 .preloader {
     position: fixed;
     top: 0;
@@ -224,6 +225,7 @@ Section
     padding-bottom: 80px;
     position: relative;
     overflow: hidden;
+    
 }
 footer {
     padding:40px 0;
@@ -624,7 +626,24 @@ input:-ms-input-placeholder {
 		font-weight:bold;
 	}
 
-
+.help {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 40px; /* Firefox */
+    column-gap: 40px;
+    -webkit-column-rule-style: solid; /* Chrome, Safari, Opera */
+    -moz-column-rule-style: solid; /* Firefox */
+    column-rule-style: solid;
+    -webkit-column-rule-width: 3px; /* Chrome, Safari, Opera */
+    -moz-column-rule-width: 3px; /* Firefox */
+    column-rule-width: 3px;
+}
+.ora_btn{
+	width:100%;
+	text-align:center;
+}
 
 
 

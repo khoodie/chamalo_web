@@ -77,7 +77,7 @@
 						
 						<h1>게시판<br>함께해요<i class="fa fa-circle"></i></h1>
 						<p>You’re safe with us. The privacy and security of your financial information is our top priority.</p>
-						<a href="#"><h4>더알아보기<span><i class="fa fa-long-arrow-right"></i></span></h4></a>
+						<a href="notice_board.jsp"><h4>더알아보기<span><i class="fa fa-long-arrow-right"></i></span></h4></a>
 						
 						</div>
 					</div>
@@ -87,7 +87,7 @@
 						
 						<h1>도움을위한<br>사이트들이있어요<i class="fa fa-circle"></i></h1>
 						<p>You’re safe with us. The privacy and security of your financial information is our top priority.</p>
-						<a href="#"><h4>더알아보기<span><i class="fa fa-long-arrow-right"></i></span></h4></a>
+						<a href="help.jsp"><h4>더알아보기<span><i class="fa fa-long-arrow-right"></i></span></h4></a>
 						
 						</div>
 					</div>
