@@ -644,7 +644,29 @@ input:-ms-input-placeholder {
 	width:100%;
 	text-align:center;
 }
-
+.university_title{
+    clear: both;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #e16a2d;
+  
+}
+.sub_dt_bullet {
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+    color: #6b9045;
+}
+.supporter0103 {
+    clear: both;
+    width: 715px;
+    height: 148px;
+    font-family: "나눔고딕" !important;
+    margin: 0px;
+}
 
 
 
