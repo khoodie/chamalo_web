@@ -63,7 +63,7 @@
                         
                         <li><a href="#">흡연과 금연</a></li>
                         <li><a href="./notice_board.jsp">게시판</a></li>
-                        <li><a href="#">도움사이트</a></li>
+                        <li><a href="./help.jsp">도움사이트</a></li>
                         
                         <%
                         if(session.getAttribute("id")==null){
