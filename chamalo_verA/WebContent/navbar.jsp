@@ -64,6 +64,18 @@
                         <li><a href="#">흡연과 금연</a></li>
                         <li><a href="./notice_board.jsp">게시판</a></li>
                         <li><a href="#">도움사이트</a></li>
+                        
+                        <%
+                        if(session.getAttribute("id")==null){
+                        out.print("<li><a href=\"./register.jsp\">회원가입</a></li>");
+                        out.print("<li><a href=\"./login_form.jsp\">로그인</a></li>");
+                        }else{
+                        	out.print("<li><a href=\"\">"+session.getAttribute("id")+"님 환영!</a></li>");
+                        	out.print("<li><a href=\"logout.jsp\"> 로그아웃</a></li>");
+                        }
+                        %>
+                        
+                        
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         
