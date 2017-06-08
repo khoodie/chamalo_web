@@ -53,7 +53,7 @@
                     </button>
 					
 					<div class="brand-bg">
-                    <a class="navbar-brand" href="index.html"><img src="assets/images/logo2.png" alt="Freelancer Logo" /></a>
+                    <a class="navbar-brand" href="index.jsp"><img src="assets/images/logo2.png" alt="Freelancer Logo" /></a>
 					</div>
                 </div>
 

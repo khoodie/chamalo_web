@@ -5,9 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import chamalo_verA.userVo;
 
-public class userDAO {
+public class boardDAO {
 	Connection con;
 	Statement st;
 	PreparedStatement ps;
@@ -18,7 +17,7 @@ public class userDAO {
 	String url ="jdbc:mysql://127.0.0.1:3306/chamalo?useSSL=false";
 	
 	
-	public userDAO(){
+	public boardDAO(){
 		
 	try {
         //로드
@@ -35,7 +34,7 @@ public class userDAO {
        
         System.out.println(e+"=> 연결 실패");
     }
-}//JDBC_memberDAO()
+}
 	
 	public void db_close(){
 	       
@@ -54,61 +53,38 @@ public class userDAO {
 	/**
      * user테이블에 insert하는 메소드 작성
      */
-    public int userInsert(userVo vo){
+    public int boardInsert(boardVo vo){
         int result = 0;
        
         try{
         //실행
-            String sql = "INSERT INTO user VALUES(?,?,?)";
+     String sql = "INSERT INTO notice_board(board_usr_id,board_usr_name,board_subject,board_content) VALUES(?,?,?,?)";
            
+  
             ps = con.prepareStatement(sql);
             ps.setString(1, vo.getId());
-            ps.setString(2, vo.getPwd());
-            ps.setString(3, vo.getName());
-          
+            ps.setString(2, vo.getName());
+            ps.setString(3, vo.getSubject());
+            ps.setString(4, vo.getContent());
             result = ps.executeUpdate();
            
         }catch (Exception e){
            
-            System.out.println(e + "=> userInsert fail");
+            System.out.println(e + "=> boardInsert fail");
            
         }finally{
             db_close();
         }
        
         return result;
-    }//userInsert
+    }//boardInsert
     
-    public int userLogin(userVo vo){
-    	int result=0;
-    	
-    	try{
-        
-                String sql = "SELECT * FROM user WHERE usr_id='"+vo.getId()+"'AND usr_pwd='"+vo.getPwd()+"'";
-               
-                ps = con.prepareStatement(sql);
-                int check=0;
-                if(ps.execute()){
-                	check=1;
-                	}else{
-                	check=0;	
-                	}
-                result = check;
-               
-            }catch (Exception e){
-               
-                System.out.println(e + "=> userLoginProcess fail");
-               
-            }finally{
-                db_close();
-            }
-           
-            return result;
-        }//memberInsert
+    
 
 
 
 }
+
 
 
 

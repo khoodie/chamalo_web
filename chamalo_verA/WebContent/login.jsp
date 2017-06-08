@@ -8,7 +8,7 @@
 </head>
 <body>
 <%request.setCharacterEncoding("UTF-8");%>
-<jsp:useBean id="vo" class="chamalo_verA.userVo"/>
+<jsp:useBean id="vo" class="chamalo_verA.userVo" />
 <jsp:setProperty property="*" name="vo"/>
 <jsp:useBean id="dao" class="chamalo_verA.userDAO"/>
 
