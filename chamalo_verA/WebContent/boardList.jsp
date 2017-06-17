@@ -75,6 +75,7 @@
 		}
 		rs = pstmt.executeQuery();
 %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -102,6 +103,11 @@
 </script>
 </head>
 <body>
+
+<div class="row">
+  <%@include file="navbar.jsp" %>
+</div>
+<div class="row">
 	<form name="searchForm" action="boardList.jsp" method="get" onsubmit="return searchCheck();" >
 	<p>
 		<select name="searchType">
@@ -233,6 +239,12 @@
 		<input type="button" value="목록" onclick="goUrl('boardList.jsp');" />
 		<input type="button" value="글쓰기" onclick="goUrl('boardWriteForm.jsp');" />
 	</p>
+	
+	
+	<div class="row">
+  <%@include file="footer.jsp" %>
+</div>
+	
 </body>
 </html>
 <%

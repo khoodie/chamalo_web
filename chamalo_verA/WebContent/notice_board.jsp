@@ -85,6 +85,21 @@
 	p {width: 600px; text-align: right;}
 	table thead tr th {background-color: gray;}
 </style>
+
+<script type="text/javascript">
+        function writeForm(){
+            location.href="boderWriteForm.jsp";
+        }
+       	function plzLogin(){
+       		alert("로그인 해주세요.");	   
+       		location.href="login_form.jsp";
+       	}
+    </script>
+
+
+
+
+
 <script type="text/javascript">
 	function goUrl(url) {
 		location.href=url;
@@ -234,7 +249,16 @@
 	</table>
 	<p>
 		<input type="button" value="목록" onclick="goUrl('notice_board.jsp');" />
-		<input type="button" value="글쓰기" onclick="goUrl('board_insert.jsp');" />
+		<!-- <input type="button" value="글쓰기" onclick="goUrl('board_insert.jsp');" />
+		 -->
+		
+		<% if( session.getAttribute("id") !=null ){
+	out.print("<input type=\"button\" value=\"글쓰기\" onclick=\"goUrl(\'board_insert.jsp\');\">");
+} else{%>
+<input type="button"  value="글쓰기" onclick="plzLogin()"> 
+<%}%>
+		
+		
 	</p>
 	
 	 <%-- <%@include file="footer.jsp" %> --%>

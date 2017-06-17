@@ -1,3 +1,4 @@
+<%@page import="chamalo_verA.userVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%
@@ -9,7 +10,10 @@
 	// 파라미터
 	String mode = request.getParameter("mode");
 	String subject = request.getParameter("subject");
-	String writer = request.getParameter("writer");
+/* 	String writer = request.getParameter("writer"); */
+  
+	String writer=String.valueOf(session.getAttribute("id"));	
+
 	String contents = request.getParameter("contents");
 	String num = request.getParameter("num");
 	String pageNum = request.getParameter("pageNum");
@@ -62,5 +66,4 @@
 		if (pstmt != null) pstmt.close();
 		if (conn != null) conn.close();
 	}
-%>
 %>

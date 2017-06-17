@@ -48,7 +48,8 @@
 			</tr>
 			<tr>
 				<th align="center">작성자</th>
-				<td><input type="text" name="writer" maxlength="20" /></td>
+				<jsp:useBean id="vo" class="chamalo_verA.userVo" scope="session"/>
+				<td ><%=vo.getId()%></td>
 			</tr>
 			<tr>
 				<td colspan="2">
