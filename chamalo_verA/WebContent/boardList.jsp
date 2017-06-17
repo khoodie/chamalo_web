@@ -104,21 +104,11 @@
 </head>
 <body>
 
-<div class="row">
+<div align="center" style="margin-top: 5%;">
+
+
   <%@include file="navbar.jsp" %>
-</div>
-<div class="row">
-	<form name="searchForm" action="boardList.jsp" method="get" onsubmit="return searchCheck();" >
-	<p>
-		<select name="searchType">
-			<option value="ALL" selected="selected">전체검색</option>
-			<option value="SUBJECT" <%if ("SUBJECT".equals(searchType)) out.print("selected=\"selected\""); %>>제목</option>
-			<option value="WRITER" <%if ("WRITER".equals(searchType)) out.print("selected=\"selected\""); %>>작성자</option>
-			<option value="CONTENTS" <%if ("CONTENTS".equals(searchType)) out.print("selected=\"selected\""); %>>내용</option>
-		</select>
-		<input type="text" name="searchText" value="<%=searchTextUTF8%>" />
-		<input type="submit" value="검색" />
-	</p>
+
 	</form>
 	<table border="1" summary="게시판 목록">
 		<caption>게시판 목록</caption>
@@ -231,20 +221,30 @@
 					out.print(sb.toString());
 				}
 				%>
+				
 				</td>
 			</tr>
 		</tfoot>
 	</table>
+		<form name="searchForm" action="boardList.jsp" method="get" onsubmit="return searchCheck();" >
 	<p>
+		<select name="searchType">
+			<option value="ALL" selected="selected">전체검색</option>
+			<option value="SUBJECT" <%if ("SUBJECT".equals(searchType)) out.print("selected=\"selected\""); %>>제목</option>
+			<option value="WRITER" <%if ("WRITER".equals(searchType)) out.print("selected=\"selected\""); %>>작성자</option>
+			<option value="CONTENTS" <%if ("CONTENTS".equals(searchType)) out.print("selected=\"selected\""); %>>내용</option>
+		</select>
+		<input type="text" name="searchText" value="<%=searchTextUTF8%>" />
+		<input type="submit" value="검색" />
+
 		<input type="button" value="목록" onclick="goUrl('boardList.jsp');" />
 		<input type="button" value="글쓰기" onclick="goUrl('boardWriteForm.jsp');" />
 	</p>
 	
 	
-	<div class="row">
   <%@include file="footer.jsp" %>
-</div>
-	
+
+	</div>
 </body>
 </html>
 <%
