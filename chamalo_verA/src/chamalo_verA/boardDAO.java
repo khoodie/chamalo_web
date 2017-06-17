@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+
 public class boardDAO {
 	Connection con;
 	Statement st;
@@ -51,21 +52,21 @@ public class boardDAO {
     } //db_close
 
 	/**
-     * user테이블에 insert하는 메소드 작성
+     * board 테이블에 insert하는 메소드 작성
      */
-    public int boardInsert(boardVo vo){
-        int result = 0;
-       
+    public int boardInsert(String id,String subject,String content){
+        
+    	
+    	int result = 0;
         try{
         //실행
-     String sql = "INSERT INTO notice_board(board_usr_id,board_usr_name,board_subject,board_content) VALUES(?,?,?,?)";
-           
+//     String sql = "INSERT INTO notice_board(board_usr_id,board_usr_name,board_subject,board_content) VALUES(?,?,?,?)";
+        	 String sql = "INSERT INTO board(writer,subject,contents) VALUES(?,?,?)";
   
             ps = con.prepareStatement(sql);
-            ps.setString(1, vo.getId());
-            ps.setString(2, vo.getName());
-            ps.setString(3, vo.getSubject());
-            ps.setString(4, vo.getContent());
+            ps.setString(2, id);
+            ps.setString(3, subject);
+            ps.setString(4, content);
             result = ps.executeUpdate();
            
         }catch (Exception e){
@@ -80,8 +81,7 @@ public class boardDAO {
     }//boardInsert
     
     
-
-
+   
 
 }
 

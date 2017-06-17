@@ -86,9 +86,19 @@ public class userDAO {
         
                 String sql = "SELECT * FROM user WHERE usr_id='"+vo.getId()+"'AND usr_pwd='"+vo.getPwd()+"'";
                
+                
+                
                 ps = con.prepareStatement(sql);
+                
+                
+                rs=ps.executeQuery();
+                
+                
                 int check=0;
-                if(ps.execute()){
+//                if(ps.execute()){
+                if(rs.next()){
+                	vo.setName(rs.getString(3));
+                	vo.setId(rs.getString(1));
                 	check=1;
                 	}else{
                 	check=0;	

@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Write post..</title>
 
-
+<%request.setCharacterEncoding("UTF-8");%>
 </head>
 <body>
 
@@ -23,14 +23,13 @@
     <h1>글쓰기</h1>
     <br>
     
-    <form method="post" action="board_insert.jsp" enctype="multipart/form-data"> 
+    <form name="notice_board" method="post" action="board_insert.jsp" > 
+    
    <%--  <input type="hidden" name="board_id" value="${sessionScope.sessionID}"> --%>
    
-        <jsp:useBean id="vo" class="chamalo_verA.boardVo"/>
         
-            <%  vo.setId(String.valueOf(session.getAttribute("id")));
-           			vo.setName(String.valueOf(session.getAttribute("name")));
-           			%>
+        <jsp:useBean id="vo" class="chamalo_verA.userVo" scope="session"/>
+          
            
    
     <table width="700" border="3" bordercolor="lightgray" align="center">
@@ -48,7 +47,7 @@
         <tr>
             <td>내 용</td>
             <td>
-                <textarea name="content" cols="72" rows="20"></textarea>            
+                <textarea  name="content" cols="72" rows="20"></textarea>            
             </td>        
         </tr>
         <tr>
