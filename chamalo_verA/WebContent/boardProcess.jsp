@@ -12,7 +12,7 @@
 	String subject = request.getParameter("subject");
 /* 	String writer = request.getParameter("writer"); */
   
-	String writer=String.valueOf(session.getAttribute("id"));	
+	String swriter=String.valueOf(session.getAttribute("id"));	
 
 	String contents = request.getParameter("contents");
 	String num = request.getParameter("num");
@@ -30,7 +30,7 @@
 				"INSERT INTO BOARD (SUBJECT, WRITER, CONTENTS, IP, HIT, REG_DATE, MOD_DATE) "+
 				"VALUES (?, ?, ?, ?, 0, NOW(), NOW())");
 			pstmt.setString(1, subject);
-			pstmt.setString(2, writer);
+			pstmt.setString(2, swriter);
 			pstmt.setString(3, contents);
 			pstmt.setString(4, ip);
 			pstmt.executeUpdate();
@@ -41,7 +41,7 @@
 				"UPDATE BOARD SET SUBJECT = ?, WRITER = ?, CONTENTS = ?, IP = ?, MOD_DATE = NOW() "+
 				"WHERE NUM = ?");
 			pstmt.setString(1, subject);
-			pstmt.setString(2, writer);
+			pstmt.setString(2, swriter);
 			pstmt.setString(3, contents);
 			pstmt.setString(4, ip);
 			pstmt.setString(5, num);
@@ -50,12 +50,29 @@
 			response.sendRedirect(
 				"boardView.jsp?num="+num+"&pageNum="+pageNum+"&searchType="+searchType+"&searchText="+searchText);
 		} else if ("D".equals(mode)) {
-			pstmt = conn.prepareStatement("DELETE FROM BOARD WHERE NUM = ?");
-			pstmt.setString(1, num);
-			pstmt.executeUpdate();
-			
-			response.sendRedirect(
-				"boardList.jsp?pageNum="+pageNum+"&searchType="+searchType+"&searchText="+searchText);
+					if(session.getAttribute("id")!=null){
+						
+						ResultSet rs=null;
+						String sql = "SELECT writer FROM board WHERE num='"+num+"'";
+						
+						pstmt = conn.prepareStatement(sql);
+						rs=pstmt.executeQuery();
+						
+						if(rs.next()){
+								  		pstmt.close();
+											pstmt = conn.prepareStatement("DELETE FROM BOARD WHERE NUM = ?");
+											pstmt.setString(1, num);
+											pstmt.executeUpdate();
+											
+											response.sendRedirect(
+												"boardList.jsp?pageNum="+pageNum+"&searchType="+searchType+"&searchText="+searchText);
+									  }
+							}else{%>
+						<script>
+						alert("로그인 해주세요");
+						location.href='login_form.jsp';                                   // 로그인페이지로이
+					</script>
+					<%}
 		} else {
 			response.sendRedirect("boardList.jsp");
 		}

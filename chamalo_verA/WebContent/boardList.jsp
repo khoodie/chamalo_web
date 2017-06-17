@@ -79,13 +79,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
 <title>게시판 목록</title>
+
 <style type="text/css">
-	* {font-size: 9pt;}
+	* {font-size: 11pt; }
 	p {width: 600px; text-align: right;}
-	table thead tr th {background-color: gray;}
+	table thead tr th {background-color: #fa5c65;}
 </style>
+
 <script type="text/javascript">
 	function goUrl(url) {
 		location.href=url;
@@ -101,6 +105,7 @@
 		return true;
 	}
 </script>
+
 </head>
 <body>
 
@@ -226,7 +231,10 @@
 			</tr>
 		</tfoot>
 	</table>
-		<form name="searchForm" action="boardList.jsp" method="get" onsubmit="return searchCheck();" >
+	
+	<div align="center">
+		
+	<form name="searchForm" action="boardList.jsp" method="get" onsubmit="return searchCheck();" >
 	<p>
 		<select name="searchType">
 			<option value="ALL" selected="selected">전체검색</option>
@@ -234,13 +242,14 @@
 			<option value="WRITER" <%if ("WRITER".equals(searchType)) out.print("selected=\"selected\""); %>>작성자</option>
 			<option value="CONTENTS" <%if ("CONTENTS".equals(searchType)) out.print("selected=\"selected\""); %>>내용</option>
 		</select>
+		
 		<input type="text" name="searchText" value="<%=searchTextUTF8%>" />
 		<input type="submit" value="검색" />
-
 		<input type="button" value="목록" onclick="goUrl('boardList.jsp');" />
 		<input type="button" value="글쓰기" onclick="goUrl('boardWriteForm.jsp');" />
 	</p>
 	
+	</div>
 	
   <%@include file="footer.jsp" %>
 

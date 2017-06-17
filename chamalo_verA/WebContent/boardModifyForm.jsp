@@ -23,17 +23,24 @@
 		rs = pstmt.executeQuery();
 		rs.next();
 %>
+
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+
 <title>게시판 수정 폼</title>
 <script type="text/javascript" src="<%=request.getContextPath()%>/ckeditor/ckeditor.js"></script>
+
 <style type="text/css">
-	* {font-size: 9pt;}
+	* {font-size: 11pt;}
 	p {width: 600px; text-align: right;}
-	table tbody tr th {background-color: gray;} 법
+	table tbody tr th {background-color: #fa5c65;;} 법
 </style>
+
 <script type="text/javascript">
 	function goUrl(url) {
 		location.href=url;
@@ -54,8 +61,15 @@
 		return true;
 	}
 </script>
+
 </head>
 <body>
+
+<div align="center" style="margin-top: 5%;">
+
+
+  <%@include file="navbar.jsp" %>
+
 	<form name="boardModifyForm" action="boardProcess.jsp" method="post" onsubmit="return boardModifyCheck();">
 	<input type="hidden" name="mode" value="M" />
 	<input type="hidden" name="num" value="<%=num %>" />
@@ -92,6 +106,8 @@
 		<input type="submit" value="글수정" />
 	</p>
 	</form>
+	</div>
+	 <%@include file="footer.jsp" %>
 </body>
 </html>
 <%

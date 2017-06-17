@@ -30,13 +30,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
 <title>게시판 상세보기</title>
+
 <style type="text/css">
-	* {font-size: 9pt;}
+	* {font-size: 11pt;}
 	.btn_align {width: 600px; text-align: right;}
-	table tbody tr th {background-color: gray;}
+	table tbody tr th {background-color: #fa5c65;}
 </style>
+
+
 <script type="text/javascript">
 	function goUrl(url) {
 		location.href=url;
@@ -48,8 +52,20 @@
 		}
 	}
 </script>
+
 </head>
-<body><%=searchText%>
+
+
+
+<body>
+
+
+<div align="center" style="margin-top: 5%;">
+
+
+  <%@include file="navbar.jsp" %>
+
+<%=searchText%>
 	<table border="1" summary="게시판 상세조회">
 		<caption>게시판 상세조회</caption>
 		<colgroup>
@@ -79,7 +95,13 @@
 		<input type="button" value="수정" onclick="goUrl('boardModifyForm.jsp?num=<%=num%>&amp;pageNum=<%=pageNum%>&amp;searchType=<%=searchType%>&amp;searchText=<%=searchText%>');" />
 		<input type="button" value="삭제" onclick="deleteCheck('boardProcess.jsp?mode=D&amp;num=<%=num%>&amp;pageNum=<%=pageNum%>&amp;searchType=<%=searchType%>&amp;searchText=<%=searchText%>');" />
 	</p>
+	
+	</div>
+<%@include file="footer.jsp" %>
 </body>
+
+
+
 </html>
 <%
 	} catch (Exception e) {
