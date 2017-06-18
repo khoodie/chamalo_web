@@ -10,7 +10,7 @@
  <%@include file="navbar.jsp" %>
 
 
-<section id="portfolio-area" class="sections">
+<section id="portfolio-area" class="sections" >
 					<div class="col-sm-6 col-sm-12 col-xs-12">
 						<div class="portfolio">
 							<h1>금연 상담 전화<i class="fa fa-circle"></i></h1>

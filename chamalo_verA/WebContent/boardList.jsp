@@ -115,7 +115,7 @@
   <%@include file="navbar.jsp" %>
 
 	</form>
-	<table border="1" summary="게시판 목록">
+	<table border="1" summary="게시판 목록" style="width:60%;">
 		<caption>게시판 목록</caption>
 		<colgroup>
 			<col width="50" />
