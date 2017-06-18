@@ -7,7 +7,7 @@
 </head>
 <body>
 <%request.setCharacterEncoding("UTF-8");%>
-
+<%@include file="navbar.jsp" %>
 <jsp:useBean id="vo" class="chamalo_verA.userVo" scope="session" />
 <jsp:setProperty property="*" name="vo"/>
 <jsp:useBean id="dao" class="chamalo_verA.userDAO" scope="session"/>
@@ -29,6 +29,6 @@
 	</script>
 <%}%>
 
-
+<%@include file="footer.jsp" %>
 </body>
 </html>

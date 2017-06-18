@@ -1,5 +1,6 @@
 package chamalo_verA;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -59,13 +60,18 @@ public class userDAO {
        
         try{
         //실행
-            String sql = "INSERT INTO user VALUES(?,?,?)";
+            String sql = "INSERT INTO user(usr_id,usr_pwd,usr_name,gender,birth,start_smoke,start_project,smoke) VALUES(?,?,?,?,?,?,NOW(),?)";
            
             ps = con.prepareStatement(sql);
+            
             ps.setString(1, vo.getId());
             ps.setString(2, vo.getPwd());
             ps.setString(3, vo.getName());
-          
+            ps.setInt(4, vo.getGender());
+            ps.setString(5, vo.getBirth());
+            ps.setString(6, vo.getStart_smoke());
+            ps.setInt(7, vo.getSmoke());
+            
             result = ps.executeUpdate();
            
         }catch (Exception e){
