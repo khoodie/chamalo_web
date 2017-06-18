@@ -47,7 +47,7 @@
 						<div class="header-details">
 							<h1>흡연<br> 그것은 죽음으로 가는 <br>지름길입니다.</h1>
 							<p>모두 함께 금연을 해봅시다.</p>
-							<button class="btn btn-default"><a href="introduce.jsp">더 알아보기</a></button>
+							<button class="btn btn-default"><a href="introduce.jsp" style="color:white">더 알아보기</a></button>
 						</div>
 					</div>
 					
