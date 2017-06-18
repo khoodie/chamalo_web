@@ -246,7 +246,18 @@
 		<input type="text" name="searchText" value="<%=searchTextUTF8%>" />
 		<input type="submit" value="검색" />
 		<input type="button" value="목록" onclick="goUrl('boardList.jsp');" />
+		
+		<%if(session.getAttribute("id")!=null){ %>
 		<input type="button" value="글쓰기" onclick="goUrl('boardWriteForm.jsp');" />
+		<%}else{ %>
+		<script type="text/javascript">
+		function notLogin(){
+		alert('로그인하세요');
+		goUrl('login_form.jsp');
+	}
+		</script>
+		<input type="button" value="글쓰기" onclick="notLogin();" />
+		<% }%>
 	</p>
 	
 	</div>
