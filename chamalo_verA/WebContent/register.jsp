@@ -47,15 +47,7 @@
   </label>
 </div>
 </td>
-<!-- 		<td>성별:</td>
-		<td>
-		<div class="btn-group" role="group" aria-label="...">
-		<input type="button" name=gender class="btn btn-default" value="남자" onclick=/>
-		<input type="button" name=gender class="btn btn-default" value="여자"/>
-		</div>
-		</td>
 
- -->
 
 </tr>
 

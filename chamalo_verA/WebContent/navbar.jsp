@@ -68,7 +68,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav pull-right">
                         
-                        <li><a href="#">흡연과 금연</a></li>
+                        <li><a href="introduce.jsp">담배에대해서</a></li>
                         <li><a href="boardList.jsp">게시판</a></li>
                         <li><a href="./help.jsp">도움사이트</a></li>
                         
